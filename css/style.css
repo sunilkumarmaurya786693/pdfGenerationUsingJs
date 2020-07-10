@@ -1,0 +1,68 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+.pdf-container{
+	border-top: 20px solid #EE6C66;
+	border-bottom: 20px solid #EE6C66;
+	font-family: 'Roboto', sans-serif;
+	padding: 60px;
+}
+.heading{
+	display: flex;
+	justify-content: space-between;
+}
+.tutorInvoice{
+	font-size: 40px;
+	font-family: 'Poppins', sans-serif;
+	color: #7f7f7f;
+}
+.lidoIcon{
+}
+.personalInvoiceDetail{
+	display: flex;
+	justify-content: space-between;
+	line-height: 30px;
+	font-size: 20px;
+	color: #F26456;
+}
+.personalDetail{
+   display: flex;
+   flex-direction: column;
+}
+.invoiceDetail{
+	display: flex;
+	flex-direction: column;
+}
+.billing{
+	margin-top: 30px;
+	line-height: 30px;
+	
+}
+.billingHeading
+{
+	min-width: 400px;
+	border-bottom: 3px solid #c4bebe;
+	padding-bottom: 5px;
+}
+.companyDetail{
+	width: 350px;
+	margin-top: 5px;
+}
+.compensationDetail{
+	margin-top: 15px;
+}
+table{
+	border-collapse: collapse;
+	width: 100%;
+}
+td,th{
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 10px;
+	height: 20px;
+	padding-right: 10px;
+}
+tr:nth-child(even){
+	background-color: #dddddd;
+}

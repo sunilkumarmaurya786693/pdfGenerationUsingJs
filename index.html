@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600|Roboto:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/handlebars.js"></script>
+  </head>
+
+  <body>
+      <div id="container">
+        <script id="forrst-profile-template" type="text/x-handlebars-template">
+        <div class="pdf-container">
+        <div class="heading">
+            <span class="tutorInvoice">TUTOR INVOICE</span>
+            <span class="lidoIcon"><img src="./lido-squarelogo-1568977469577.png" alt="lido icon"></span>
+        </div>
+       <div class="personalInvoiceDetail">
+           <div class="personalDetail">
+               <span>{{name}}</span>
+               <span>{{address}}</span>
+               <span>{{city}} {{state}} {{pinCode}}</span>
+           </div>
+
+           <div class="invoiceDetail">
+            <span>{{date}}</span>
+            <span>{{invoiceNumber}}</span>
+        </div>
+       </div>
+       <div class="billing">
+         <span class="billingHeading">BILL TO</span>
+         <div class="companyDetail">
+           {{companyDetail}}
+         </div>
+         <div>GSTIN: {{GSTIN}}</div>
+       </div>
+       <div class="compensationDetail">
+         <table>
+           <tr>
+             <th>DESCRIPTION</th>
+             <th>TOTAL AMOUNT</th>
+           </tr>
+           {{#each compensationDetail}}
+           <tr>
+             <td>{{this.categoryName}}</td>
+             <td>{{this.amount}}</td>
+           </tr>
+           {{/each}}
+           
+         </table>
+       </div>
+        </div>
+        </script>
+      </div>
+    <script>
+      var forrstProfile = {
+        name: "Sunil Kumar Maurya",
+        address:"SA 19/226 Tadiya Chakwihi Sarnath",
+        city:"Varanasi",
+        State:"Uttar Pradesh",
+        pinCode:"221007",
+        date:"12/10/2019",
+        invoiceNumber:"QW12SFSFAS1321324",
+        companyDetail:"Quality Tutorials Private Limited 206,Floor 2, Arun Chambers,Pandit Madan Mohan Malviya Marg,Tardeo, Mumbai 400034",
+        GSTIN:"27AAACQ6030B1ZY",
+        compensationDetail:[
+          {categoryName:"Earning per class",
+           amount:"2323"
+          },
+          {categoryName:"Incentives",
+           amount:"456"
+          },
+          {categoryName:"Deduction",
+           amount:"67"
+          },
+          {categoryName:"Other Adjustments",
+           amount:"563"
+          },
+          {categoryName:"",
+           amount:""
+          },
+          {categoryName:"",
+           amount:""
+          },
+          {categoryName:"",
+           amount:""
+          }
+        ],
+        TotalAmount:'50234',
+      };
+
+      var template = $("#forrst-profile-template").html();
+      var compile = Handlebars.compile(template);
+      var result = compile(forrstProfile);
+
+      $("#container").html(result);
+    </script>
+  </body>
+</html>
