@@ -27,8 +27,8 @@
            </div>
 
            <div class="invoiceDetail">
-            <span>{{date}}</span>
-            <span>{{invoiceNumber}}</span>
+            <span>Date: {{date}}</span>
+            <span>Invoice Number: {{invoiceNumber}}</span>
         </div>
        </div>
        <div class="billing">
@@ -40,7 +40,7 @@
        </div>
        <div class="compensationDetail">
          <table>
-           <tr>
+           <tr class="tableHeading">
              <th>DESCRIPTION</th>
              <th>TOTAL AMOUNT</th>
            </tr>
@@ -50,8 +50,44 @@
              <td>{{this.amount}}</td>
            </tr>
            {{/each}}
-           
+           <tr class="totalAmount">
+            <td>TOTAL</td>
+            <td>{{this.TotalAmount}}</td>
+          </tr>
          </table>
+       </div>
+       <div class="tutorDetail">TUTOR DETAILS</div>
+       <div class="bankDetail">
+         <div>
+           <span>Banking Account Detail</span>
+           <span>{{AccountType}}</span>
+         </div>
+         <div>
+          <span>Name as in Bank</span>
+          <span>{{AccountName}}</span>
+        </div>
+        <div>
+          <span>A/C No.</span>
+          <span>{{AccountNumber}}</span>
+        </div>
+        <div>
+          <span>IFSC Code</span>
+          <span>{{IFSCcode}}</span>
+        </div>
+        <div>
+          <span>Bank Name</span>
+          <span>{{BankName}}</span>
+        </div>
+        <div>
+          <span>Pan Number</span>
+          <span>{{PanNumber}}</span>
+        </div>
+       </div>
+       <div class="userName">
+         {{name}}
+       </div>
+       <div class="info">
+        This is a computer generated invoice and validated by issuing party using OTP sent on registered mobile number; thus, no signature required
        </div>
         </div>
         </script>
@@ -82,15 +118,15 @@
           },
           {categoryName:"",
            amount:""
-          },
-          {categoryName:"",
-           amount:""
-          },
-          {categoryName:"",
-           amount:""
           }
         ],
         TotalAmount:'50234',
+        AccountType:"Saving",
+        BankName:"HDFC",
+        AccountNumber:"12345678910",
+        AccountName:'SUNIL KUMAR MAURYA',
+        IFSCcode:'HDFC123456',
+        PanNumber:'123ASC45GF'
       };
 
       var template = $("#forrst-profile-template").html();
